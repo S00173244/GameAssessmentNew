@@ -62,3 +62,15 @@
 /processorParam:TextureFormat=Compressed
 /build:Font/CountDownFont.spritefont
 
+#begin Music/defeat.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/defeat.mp3
+
+#begin Music/victory.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Music/victory.mp3
+

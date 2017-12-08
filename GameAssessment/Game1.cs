@@ -28,6 +28,8 @@ namespace TileBasedPlayer20172018
         List<EnemyTank> enemyList = new List<EnemyTank>();
         CountdownTimer countDownTimer;
         Song backgroundMusic;
+        Song defeatMusic;
+        Song victoryMusic;
         public enum GameStatus { PLAYING, VICTORY, DEFEAT }
         GameStatus currentGameStatus = GameStatus.PLAYING;
         public enum TileType { BLUEBOX, PAVEMENT, BLUESTEEL, GREENBOX ,HOME };
@@ -115,7 +117,9 @@ namespace TileBasedPlayer20172018
 
             countDownTimer = new CountdownTimer(5000, Content.Load<SpriteFont>("Font/CountDownFont"), this);
             backgroundMusic = Content.Load<Song>("Music/backgroundMusic");
-            
+            victoryMusic = Content.Load<Song>("Music/victory");
+            defeatMusic = Content.Load<Song>("Music/defeat");
+
             //List<Tile> found = SimpleTileLayer.getNamedTiles("green box");
             // TODO: use this.Content to load your game content here
         }
@@ -158,17 +162,36 @@ namespace TileBasedPlayer20172018
 
             countDownTimer.UpdateTime(gameTime);
 
-            if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.DEAD || countDownTimer.IsTimeLeft() == false) currentGameStatus = GameStatus.DEFEAT;
-            else if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.ALIVE && enemyList.Count <= 0) currentGameStatus = GameStatus.VICTORY;
-            else if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.ALIVE && enemyList.Count > 0) currentGameStatus = GameStatus.PLAYING;
+            if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.DEAD || countDownTimer.IsTimeLeft() == false)
+            {
+                GameStatus previousStatus = currentGameStatus;
+                currentGameStatus = GameStatus.DEFEAT;
+                if (previousStatus != currentGameStatus) MediaPlayer.Stop();
+            }
+            else if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.ALIVE && enemyList.Count <= 0)
+            {
+                GameStatus previousStatus = currentGameStatus;
+                currentGameStatus = GameStatus.VICTORY;
+                if (previousStatus != currentGameStatus) MediaPlayer.Stop();
+            }
+            else if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.ALIVE && enemyList.Count > 0)
+            {
+                GameStatus previousStatus = currentGameStatus;
+                currentGameStatus = GameStatus.PLAYING;
+                if (previousStatus != currentGameStatus) MediaPlayer.Stop();
+            }
             
 
             switch (currentGameStatus)
             {
                 case GameStatus.PLAYING:
-                    if (MediaPlayer.State != MediaState.Playing)
+                    if (MediaPlayer.State == MediaState.Stopped)
                     {
+                        
                         MediaPlayer.Play(backgroundMusic);
+                        
+                        
+                        
                     }
                     foreach (EnemyTank item in enemyList)
                     {
@@ -198,10 +221,17 @@ namespace TileBasedPlayer20172018
                     break;
 
                 case GameStatus.DEFEAT:
+                    if (MediaPlayer.State != MediaState.Playing)
+                    {
+                        MediaPlayer.Play(defeatMusic);
+                    }
                     break;
 
                 case GameStatus.VICTORY:
-
+                    if (MediaPlayer.State != MediaState.Playing)
+                    {
+                        MediaPlayer.Play(victoryMusic);
+                    }
                     break;
 
 

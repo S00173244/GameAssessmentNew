@@ -28,3 +28,7 @@ C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\bin\Windows\x
 C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\obj\x86\Debug\GameAssessment.csprojResolveAssemblyReference.cache
 C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\obj\x86\Debug\GameAssessment.exe
 C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\obj\x86\Debug\GameAssessment.pdb
+C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\bin\Windows\x86\Debug\Content\Music\defeat.wma
+C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\bin\Windows\x86\Debug\Content\Music\defeat.xnb
+C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\bin\Windows\x86\Debug\Content\Music\victory.wma
+C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\bin\Windows\x86\Debug\Content\Music\victory.xnb

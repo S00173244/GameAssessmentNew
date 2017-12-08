@@ -67,6 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Music\backgroundMusic.mp3" />
+    <Content Include="Content\Music\defeat.mp3" />
+    <Content Include="Content\Music\victory.mp3" />
     <Content Include="Content\Sound\explosionSound.wav" />
     <Content Include="Content\Sound\gunSound.wav" />
     <Content Include="Content\Tiles\collider.png" />

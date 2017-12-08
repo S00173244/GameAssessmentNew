@@ -158,10 +158,10 @@ namespace TileBasedPlayer20172018
 
             countDownTimer.UpdateTime(gameTime);
 
-            if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.ALIVE && enemyList.Count > 0) currentGameStatus = GameStatus.PLAYING;
+            if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.DEAD || countDownTimer.IsTimeLeft() == false) currentGameStatus = GameStatus.DEFEAT;
             else if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.ALIVE && enemyList.Count <= 0) currentGameStatus = GameStatus.VICTORY;
-            else if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.DEAD || countDownTimer.IsTimeLeft()) currentGameStatus = GameStatus.DEFEAT;
-
+            else if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.ALIVE && enemyList.Count > 0) currentGameStatus = GameStatus.PLAYING;
+            
 
             switch (currentGameStatus)
             {

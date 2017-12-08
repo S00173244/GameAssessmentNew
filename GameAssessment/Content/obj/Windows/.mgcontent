@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Tiles/collider.png</File>
+    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Tiles/tank tiles 64 x 64.png</File>
+    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Sound/gunSound.wav</File>
+    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Sound/explosionSound.wav</File>
+    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Music/backgroundMusic.mp3</File>
+    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Font/CountDownFont.spritefont</File>
+  </SourceFiles>
+</SourceFileCollection>

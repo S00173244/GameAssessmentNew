@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Music/defeat.mp3</SourceFile>
-  <SourceTime>2017-12-08T17:50:37.8959776+00:00</SourceTime>
-  <DestFile>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/bin/Windows/Music/defeat.xnb</DestFile>
-  <DestTime>2017-12-08T17:56:02.4858065+00:00</DestTime>
+  <SourceFile>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Music/defeat.mp3</SourceFile>
+  <SourceTime>2017-12-12T11:22:59.5064913+00:00</SourceTime>
+  <DestFile>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/bin/Windows/Music/defeat.xnb</DestFile>
+  <DestTime>2017-12-12T11:35:13.8443893+00:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2017-03-01T15:05:36+00:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/bin/Windows/Music/defeat.wma</string>
+    <string>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/bin/Windows/Music/defeat.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

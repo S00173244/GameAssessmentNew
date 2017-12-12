@@ -32,3 +32,37 @@ C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\bin\Windows\x
 C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\bin\Windows\x86\Debug\Content\Music\defeat.xnb
 C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\bin\Windows\x86\Debug\Content\Music\victory.wma
 C:\Users\Nels\Desktop\New folder (4)\GameAssessment\GameAssessment\bin\Windows\x86\Debug\Content\Music\victory.xnb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\obj\x86\Debug\GameAssessment.exe
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\obj\x86\Debug\GameAssessment.pdb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Font\CountDownFont.xnb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Music\backgroundMusic.wma
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Music\backgroundMusic.xnb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Music\defeat.wma
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Music\defeat.xnb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Music\victory.wma
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Music\victory.xnb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Sound\explosionSound.xnb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Sound\gunSound.xnb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Tiles\collider.xnb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\Content\Tiles\tank tiles 64 x 64.xnb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\GameAssessment.exe
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\GameAssessment.pdb
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\S00173244\Source\Repos\GameAssessmentNew\GameAssessment\obj\x86\Debug\GameAssessment.csprojResolveAssemblyReference.cache

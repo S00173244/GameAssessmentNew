@@ -25,10 +25,10 @@ namespace Tiler
         private SoundEffect shootingSound;
         private SoundEffectInstance soundEffectInstance;
         SoundEffect explosionSound;
-        private int fireRate = 2500;
+        private int fireRate = 1000;
         private int remainingReloadTime = 0;
         private enum FireState { Ready, NotReady }
-
+        public bool objectivesComplete = false;
         private FireState fireState = FireState.Ready;
 
         public Projectile Bullet
@@ -65,6 +65,7 @@ namespace Tiler
             shootingSound = shoot;
             explosionSound = explosion;
             soundEffectInstance = shootingSound.CreateInstance();
+            CreateBullet();
         }
 
         public void Collision(Collider c)
@@ -75,7 +76,7 @@ namespace Tiler
 
         public override void Update(GameTime gameTime)
         {
-            Console.WriteLine(Health);
+            //Console.WriteLine(Health);
             UpdatePlayerStatus();
             previousPosition = PixelPosition;
             if (Keyboard.GetState().IsKeyDown(Keys.D))
@@ -96,14 +97,25 @@ namespace Tiler
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Z))
                 this.angleOfRotation -= turnspeed;
-            Console.WriteLine("PixelPosition : {0}",PixelPosition);
-            Console.WriteLine("Origin : {0}",Origin);
+            //Console.WriteLine("PixelPosition : {0}",PixelPosition);
+            //Console.WriteLine("Origin : {0}",Origin);
             if (Keyboard.GetState().IsKeyDown(Keys.X))
                 this.angleOfRotation += turnspeed;
 
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
-                CreateBullet();
+                if (IsReadyToFire())
+                {
+                    
+                    CreateBullet();
+                    FireGun();
+                    UpdateFireState(false);
+                }
+                else
+                {
+                    ReloadArrow(gameTime);
+                }
+                
 
                 //if(re)
             }
@@ -132,12 +144,16 @@ namespace Tiler
 
         public void FireGun()
         {
+            Console.WriteLine(Mouse.GetState().X);
+            Console.WriteLine(Mouse.GetState().Y);
+
             
+            Bullet.fire(new Vector2(Mouse.GetState().X, Mouse.GetState().Y));
         }
 
         public void CreateBullet()
         {
-            Bullet = new Projectile(Game, this.PixelPosition, new List<TileRef>()
+            Bullet = new Projectile(Game, this.PixelPosition + Origin, new List<TileRef>()
                 {
                 new TileRef(8, 0, 0),
                 }, FrameWidth, FrameHeight, 1, explosionSound, "Player");

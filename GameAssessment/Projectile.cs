@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Tiling;
 using Microsoft.Xna.Framework.Audio;
+using Tiler;
 
 namespace AnimatedSprite
 {
@@ -129,14 +130,14 @@ namespace AnimatedSprite
                 {
                     explosion.Visible = false;
                     ExplosionTimer = 0;
-                projectileState = PROJECTILE_STATE.STILL;
+                    projectileState = PROJECTILE_STATE.STILL;
                 }
 
                 base.Update(gametime);
             }
             public void fire(Vector2 SiteTarget)
             {
-            projectileState = PROJECTILE_STATE.FIRING;
+                projectileState = PROJECTILE_STATE.FIRING;
                 Target = SiteTarget;
             }   
             public override void Draw(GameTime gameTime)
@@ -152,21 +153,38 @@ namespace AnimatedSprite
 
             }
 
-        public void CheckCollision(RotatingSprite other)
+        public void CheckCollision(TilePlayer player)
         {
            
-                if (other.GetType().ToString() == "Tiler.TilePlayer" && this.collisionDetect(other)&& hasHitTarget == false)
-                {
-                    other.Health -= 1;
-                    ProjectileState = PROJECTILE_STATE.EXPOLODING;
-                    this.Visible = false;
+            if (this.collisionDetect(player)&& hasHitTarget == false)
+            {
+                player.Health -= 1;
+                ProjectileState = PROJECTILE_STATE.EXPOLODING;
+                this.Visible = false;
                     
-                    UpdateHitStatus();
-                    
-                }
+                UpdateHitStatus();
+
+            }
+            
+
+            
+           
+
             
         }
+        public void CheckCollision(EnemyTank enemy)
+        {
+            if (this.collisionDetect(enemy) && hasHitTarget == false)
+            {
 
+                enemy.Health -= 100;
+                ProjectileState = PROJECTILE_STATE.EXPOLODING;
+                this.Visible = false;
+
+                UpdateHitStatus();
+            }
+
+        }
         public void UpdateHitStatus()
         {
             hasHitTarget = true;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Tiles/collider.png</SourceFile>
-  <SourceTime>2017-12-07T05:04:20+00:00</SourceTime>
-  <DestFile>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/bin/Windows/Tiles/collider.xnb</DestFile>
-  <DestTime>2017-12-08T17:02:59.8511759+00:00</DestTime>
+  <SourceFile>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Tiles/collider.png</SourceFile>
+  <SourceTime>2017-12-12T11:22:59.5524899+00:00</SourceTime>
+  <DestFile>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/bin/Windows/Tiles/collider.xnb</DestFile>
+  <DestTime>2017-12-12T11:35:10.7281561+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T15:05:36+00:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

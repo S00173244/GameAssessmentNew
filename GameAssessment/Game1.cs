@@ -30,8 +30,11 @@ namespace TileBasedPlayer20172018
         Song backgroundMusic;
         Song defeatMusic;
         Song victoryMusic;
+        StartPositionTile startPosition;
+        EndPositionTile endPosition;
         public enum GameStatus { PLAYING, VICTORY, DEFEAT }
         GameStatus currentGameStatus = GameStatus.PLAYING;
+        
         public enum TileType { BLUEBOX, PAVEMENT, BLUESTEEL, GREENBOX ,HOME };
         int[,] tileMap = new int[,]
     {
@@ -48,7 +51,7 @@ namespace TileBasedPlayer20172018
         {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,2,2,2,1,1,2,2,2,2,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
         {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,2,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
         {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
-        {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,2,1,1,2,2,2,4,1,2,2,2,2,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+        {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,2,1,1,2,2,2,1,1,2,2,2,2,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
         {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
         {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
         {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
@@ -73,7 +76,10 @@ namespace TileBasedPlayer20172018
             new Camera(this, Vector2.Zero, 
                 new Vector2(tileMap.GetLength(1) * tileWidth, tileMap.GetLength(0) * tileHeight));
             new InputEngine(this);
-            Services.AddService(new TilePlayer(this, new Vector2(64, 128), new List<TileRef>()
+
+            startPosition = new StartPositionTile(this, new Vector2(64, 128), new List<TileRef>(){new TileRef(10, 1, 0) }, 64, 64, 1f);
+            endPosition = new EndPositionTile(this, new Vector2(25*64, 13*64), new List<TileRef>() { new TileRef(0, 2, 0) }, 64, 64, 1f);
+            Services.AddService(new TilePlayer(this, startPosition.PixelPosition, new List<TileRef>()
             {
                 new TileRef(15, 2, 0),
                 new TileRef(15, 3, 0),
@@ -86,7 +92,7 @@ namespace TileBasedPlayer20172018
             SetColliders(TileType.BLUESTEEL);
             SetColliders(TileType.BLUEBOX);
 
-
+            IsMouseVisible = true;
             base.Initialize();
         }
 
@@ -115,7 +121,7 @@ namespace TileBasedPlayer20172018
 
             CreateEnemies();
 
-            countDownTimer = new CountdownTimer(5000, Content.Load<SpriteFont>("Font/CountDownFont"), this);
+            countDownTimer = new CountdownTimer(50000, Content.Load<SpriteFont>("Font/CountDownFont"), this);
             backgroundMusic = Content.Load<Song>("Music/backgroundMusic");
             victoryMusic = Content.Load<Song>("Music/victory");
             defeatMusic = Content.Load<Song>("Music/defeat");
@@ -170,9 +176,14 @@ namespace TileBasedPlayer20172018
             }
             else if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.ALIVE && enemyList.Count <= 0)
             {
-                GameStatus previousStatus = currentGameStatus;
-                currentGameStatus = GameStatus.VICTORY;
-                if (previousStatus != currentGameStatus) MediaPlayer.Stop();
+                Services.GetService<TilePlayer>().objectivesComplete = true;
+
+                if (Services.GetService<TilePlayer>().collisionDetect(endPosition)){
+                    GameStatus previousStatus = currentGameStatus;
+                    currentGameStatus = GameStatus.VICTORY;
+                    if (previousStatus != currentGameStatus) MediaPlayer.Stop();
+                }
+                
             }
             else if (Services.GetService<TilePlayer>().PlayerStatus == TilePlayer.Status.ALIVE && enemyList.Count > 0)
             {
@@ -213,11 +224,23 @@ namespace TileBasedPlayer20172018
                             item.FaceThePlayer(Services.GetService<TilePlayer>());
                             item.ReloadArrow(gameTime);
                         }
-
-                        item.Bullet.CheckCollision(Services.GetService<TilePlayer>());
+                        
+                        
 
                         item.Update(gameTime);
                     }
+
+
+                    for (int i = 0; i < enemyList.Count; i++)
+                    {
+                        Services.GetService<TilePlayer>().Bullet.CheckCollision(enemyList[i]);
+                        if (enemyList[i].EnemyStatus == EnemyTank.Status.DEAD) enemyList.Remove(enemyList[i]);
+                    }
+                        
+                        
+                    
+
+                    
                     break;
 
                 case GameStatus.DEFEAT:
@@ -255,7 +278,7 @@ namespace TileBasedPlayer20172018
             
             for (int i = 0; i < 5; i++)
             {
-                EnemyTank enemy = new EnemyTank(this, new Vector2(64*(i+1), 128+64), new List<TileRef>()
+                EnemyTank enemy = new EnemyTank(this, new Vector2(64*(i*i*i), 64*(i)), new List<TileRef>()
                 {
                 new TileRef(21, 2, 0),
                 new TileRef(21, 3, 0),
@@ -285,8 +308,10 @@ namespace TileBasedPlayer20172018
                 item.Draw(gameTime);
 
             }
+
+            startPosition.Draw(gameTime);
             // TODO: Add your drawing code here
-            countDownTimer.Draw();
+            countDownTimer.Draw(gameTime);
             base.Draw(gameTime);
         }
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Font/CountDownFont.spritefont</SourceFile>
-  <SourceTime>2017-03-01T15:05:30+00:00</SourceTime>
-  <DestFile>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/bin/Windows/Font/CountDownFont.xnb</DestFile>
-  <DestTime>2017-12-08T17:03:03.1594881+00:00</DestTime>
+  <SourceFile>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Font/CountDownFont.spritefont</SourceFile>
+  <SourceTime>2017-12-12T11:22:59.4684898+00:00</SourceTime>
+  <DestFile>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/bin/Windows/Font/CountDownFont.xnb</DestFile>
+  <DestTime>2017-12-12T11:35:13.4319613+00:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2017-03-01T15:05:36+00:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

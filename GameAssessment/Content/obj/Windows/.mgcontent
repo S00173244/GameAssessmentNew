@@ -4,13 +4,13 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Tiles/collider.png</File>
-    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Tiles/tank tiles 64 x 64.png</File>
-    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Sound/gunSound.wav</File>
-    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Sound/explosionSound.wav</File>
-    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Music/backgroundMusic.mp3</File>
-    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Font/CountDownFont.spritefont</File>
-    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Music/defeat.mp3</File>
-    <File>C:/Users/Nels/Desktop/New folder (4)/GameAssessment/GameAssessment/Content/Music/victory.mp3</File>
+    <File>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Tiles/collider.png</File>
+    <File>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Tiles/tank tiles 64 x 64.png</File>
+    <File>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Sound/gunSound.wav</File>
+    <File>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Sound/explosionSound.wav</File>
+    <File>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Music/backgroundMusic.mp3</File>
+    <File>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Font/CountDownFont.spritefont</File>
+    <File>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Music/defeat.mp3</File>
+    <File>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Music/victory.mp3</File>
   </SourceFiles>
 </SourceFileCollection>

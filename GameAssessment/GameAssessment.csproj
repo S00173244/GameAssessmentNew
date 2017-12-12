@@ -44,6 +44,7 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Collider.cs" />
     <Compile Include="CountdownTimer.cs" />
+    <Compile Include="EndPositionTile.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="HealthBar.cs" />
     <Compile Include="InputEngine.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="EnemyTank.cs" />
     <Compile Include="SimpleTileLayer.cs" />
     <Compile Include="Sprite.cs" />
+    <Compile Include="StartPositionTile.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TilePlayer.cs" />
     <Compile Include="TileRef.cs" />

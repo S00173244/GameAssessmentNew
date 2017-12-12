@@ -11,16 +11,17 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace AnimatedSprite
 {
-    class EnemyTank:RotatingSprite
+    public class EnemyTank:RotatingSprite
     {
         private int fireRate = 2500;
         private int remainingReloadTime = 0;
-        private float shootingArea = 500;
+        private float shootingArea = 300;
         private Projectile bullet;
         private SoundEffect shootingSound;
         private SoundEffectInstance soundEffectInstance;
         SoundEffect explosionSound;
-        
+        public enum Status { ALIVE, DEAD }
+        Status enemyStatus = Status.ALIVE;
 
         private enum FireState { Ready, NotReady}
 
@@ -39,6 +40,19 @@ namespace AnimatedSprite
             }
         }
 
+        public Status EnemyStatus
+        {
+            get
+            {
+                return enemyStatus;
+            }
+
+            set
+            {
+                enemyStatus = value;
+            }
+        }
+
         public EnemyTank(Game game, Vector2 userPosition,List<TileRef>sheetRefs,int frameWidth,int frameHeight,float layerDepth,SoundEffect shoot,SoundEffect explosion ) : base(game,userPosition,sheetRefs, frameWidth,  frameHeight, layerDepth)
         {
             shootingSound = shoot;
@@ -53,9 +67,9 @@ namespace AnimatedSprite
 
         public override void Update(GameTime gameTime)
         {
-           // arrow.Update(gameTime);
+            // arrow.Update(gameTime);
 
-          
+            UpdateEnemyStatus();
            
             base.Update(gameTime);
         }
@@ -149,13 +163,21 @@ namespace AnimatedSprite
             }
 
     */
-            base.Draw(gameTime);
+            if(enemyStatus == Status.ALIVE) base.Draw(gameTime);
         }
 
         public void PlayGunFire()
         {
             
             soundEffectInstance.Play();
+        }
+
+        public void UpdateEnemyStatus()
+        {
+            if (Health <= 0)
+            {
+                enemyStatus = Status.DEAD;
+            }
         }
     }
 }

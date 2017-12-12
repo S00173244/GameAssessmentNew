@@ -15,17 +15,18 @@ using Tiling;
 
 namespace GameAssessment
 {
-    class CountdownTimer
+    class CountdownTimer:DrawableGameComponent
     {
         int countDownTime;
         SpriteFont spriteFont;
         Game game;
        
-        public CountdownTimer(int countDown, SpriteFont sf,Game g)
+        public CountdownTimer(int countDown, SpriteFont sf,Game g):base(g)
         {
             countDownTime = countDown;
             spriteFont = sf;
             game = g;
+            DrawOrder = 2;
          
             
         }
@@ -34,17 +35,19 @@ namespace GameAssessment
             countDownTime -= g.ElapsedGameTime.Milliseconds;
         }
 
-        public void Draw()
+        public override void Draw(GameTime gameTime)
         {
             SpriteBatch sp = game.Services.GetService<SpriteBatch>();
 
-            Console.WriteLine("Countdown time:"+countDownTime);
+            //Console.WriteLine("Countdown time:"+countDownTime/1000);
             //sp.Begin(SpriteSortMode.Immediate,BlendState.AlphaBlend, null, null, null, null, Camera.CurrentCameraTranslation);
             
             sp.Begin();
-            sp.DrawString(spriteFont,countDownTime.ToString(),new Vector2(game.GraphicsDevice.Viewport.Width-200,30), Color.Red,0f,Vector2.Zero,1f,SpriteEffects.None,0f);
+            sp.DrawString(spriteFont,countDownTime.ToString(),new Vector2(game.GraphicsDevice.Viewport.Width-200,30), Color.Red,0f,Vector2.Zero,1f,SpriteEffects.None,1f);
             sp.End();
-            
+
+            base.Draw(gameTime);
+
         }
 
         public bool IsTimeLeft()

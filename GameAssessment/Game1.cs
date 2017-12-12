@@ -76,7 +76,7 @@ namespace TileBasedPlayer20172018
             new Camera(this, Vector2.Zero, 
                 new Vector2(tileMap.GetLength(1) * tileWidth, tileMap.GetLength(0) * tileHeight));
             new InputEngine(this);
-
+            
             startPosition = new StartPositionTile(this, new Vector2(64, 128), new List<TileRef>(){new TileRef(10, 1, 0) }, 64, 64, 1f);
             endPosition = new EndPositionTile(this, new Vector2(25*64, 13*64), new List<TileRef>() { new TileRef(0, 2, 0) }, 64, 64, 1f);
             Services.AddService(new TilePlayer(this, startPosition.PixelPosition, new List<TileRef>()
@@ -278,7 +278,7 @@ namespace TileBasedPlayer20172018
             
             for (int i = 0; i < 5; i++)
             {
-                EnemyTank enemy = new EnemyTank(this, new Vector2(64*(i*i*i), 64*(i)), new List<TileRef>()
+                EnemyTank enemy = new EnemyTank(this, new Vector2(64*(i+2), 128+64), new List<TileRef>()
                 {
                 new TileRef(21, 2, 0),
                 new TileRef(21, 3, 0),

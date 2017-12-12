@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Tiling;
+using CameraNS;
+using GameAssessment;
+using TileBasedPlayer20172018;
 
 namespace Tiler
 {
@@ -30,6 +33,8 @@ namespace Tiler
         private enum FireState { Ready, NotReady }
         public bool objectivesComplete = false;
         private FireState fireState = FireState.Ready;
+        
+        
 
         public Projectile Bullet
         {
@@ -76,6 +81,8 @@ namespace Tiler
 
         public override void Update(GameTime gameTime)
         {
+
+            angleOfRotation =TurnToFace(this.PixelPosition,new Vector2(Mouse.GetState().X - Camera.CurrentCameraTranslation.Translation.X, Mouse.GetState().Y - Camera.CurrentCameraTranslation.Translation.Y),angleOfRotation,0.1f);
             //Console.WriteLine(Health);
             UpdatePlayerStatus();
             previousPosition = PixelPosition;
@@ -148,7 +155,8 @@ namespace Tiler
             Console.WriteLine(Mouse.GetState().Y);
 
             
-            Bullet.fire(new Vector2(Mouse.GetState().X, Mouse.GetState().Y));
+            
+            Bullet.fire(new Vector2(Mouse.GetState().X - Camera.CurrentCameraTranslation.Translation.X,Mouse.GetState().Y - Camera.CurrentCameraTranslation.Translation.Y));
         }
 
         public void CreateBullet()

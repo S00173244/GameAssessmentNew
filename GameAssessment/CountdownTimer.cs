@@ -40,9 +40,9 @@ namespace GameAssessment
             SpriteBatch sp = game.Services.GetService<SpriteBatch>();
 
             //Console.WriteLine("Countdown time:"+countDownTime/1000);
-            //sp.Begin(SpriteSortMode.Immediate,BlendState.AlphaBlend, null, null, null, null, Camera.CurrentCameraTranslation);
+            sp.Begin(SpriteSortMode.Immediate,BlendState.AlphaBlend, null, null, null, null, Camera.CurrentCameraTranslation);
             
-            sp.Begin();
+           // sp.Begin();
             sp.DrawString(spriteFont,countDownTime.ToString(),new Vector2(game.GraphicsDevice.Viewport.Width-200,30), Color.Red,0f,Vector2.Zero,1f,SpriteEffects.None,1f);
             sp.End();
 

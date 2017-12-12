@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/Music/victory.mp3</SourceFile>
-  <SourceTime>2017-12-12T11:22:59.5344919+00:00</SourceTime>
-  <DestFile>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/bin/Windows/Music/victory.xnb</DestFile>
-  <DestTime>2017-12-12T11:35:14.5171328+00:00</DestTime>
+  <SourceFile>C:/Users/Nels/Source/Repos/GameAssessmentNew/GameAssessment/Content/Music/victory.mp3</SourceFile>
+  <SourceTime>2017-12-12T20:32:31.3783293+00:00</SourceTime>
+  <DestFile>C:/Users/Nels/Source/Repos/GameAssessmentNew/GameAssessment/Content/bin/Windows/Music/victory.xnb</DestFile>
+  <DestTime>2017-12-12T20:33:52.0657645+00:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2017-03-01T15:05:36+00:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/S00173244/Source/Repos/GameAssessmentNew/GameAssessment/Content/bin/Windows/Music/victory.wma</string>
+    <string>C:/Users/Nels/Source/Repos/GameAssessmentNew/GameAssessment/Content/bin/Windows/Music/victory.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

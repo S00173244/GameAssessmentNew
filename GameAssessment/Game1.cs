@@ -34,6 +34,8 @@ namespace TileBasedPlayer20172018
         EndPositionTile endPosition;
         public enum GameStatus { PLAYING, VICTORY, DEFEAT }
         GameStatus currentGameStatus = GameStatus.PLAYING;
+        Texture2D victoryScreen;
+        Texture2D defeatScreen;
         
         public enum TileType { BLUEBOX, PAVEMENT, BLUESTEEL, GREENBOX ,HOME };
         int[,] tileMap = new int[,]
@@ -125,7 +127,8 @@ namespace TileBasedPlayer20172018
             backgroundMusic = Content.Load<Song>("Music/backgroundMusic");
             victoryMusic = Content.Load<Song>("Music/victory");
             defeatMusic = Content.Load<Song>("Music/defeat");
-
+            victoryScreen = Content.Load<Texture2D>("EndScreenImages/victory");
+            defeatScreen = Content.Load<Texture2D>("EndScreenImages/defeat");
             //List<Tile> found = SimpleTileLayer.getNamedTiles("green box");
             // TODO: use this.Content to load your game content here
         }
@@ -236,11 +239,11 @@ namespace TileBasedPlayer20172018
                         Services.GetService<TilePlayer>().Bullet.CheckCollision(enemyList[i]);
                         if (enemyList[i].EnemyStatus == EnemyTank.Status.DEAD) enemyList.Remove(enemyList[i]);
                     }
-                        
-                        
-                    
 
-                    
+
+                    base.Update(gameTime);
+
+
                     break;
 
                 case GameStatus.DEFEAT:
@@ -270,7 +273,7 @@ namespace TileBasedPlayer20172018
             
             // TODO: Add your update logic here
 
-            base.Update(gameTime);
+            
         }
 
         public void CreateEnemies()
@@ -302,17 +305,39 @@ namespace TileBasedPlayer20172018
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            foreach (EnemyTank item in enemyList)
-            {
-                
-                item.Draw(gameTime);
+            SpriteBatch sp = Services.GetService<SpriteBatch>();
+            if(currentGameStatus == GameStatus.VICTORY){
 
+                sp.Begin();
+                sp.Draw(victoryScreen, new Rectangle(Vector2.Zero.ToPoint(), new Point(
+                    GraphicsDevice.Viewport.Bounds.Width,
+GraphicsDevice.Viewport.Bounds.Height)), Color.White);
+                sp.End();
+            }else if (currentGameStatus == GameStatus.DEFEAT)
+            {
+
+                sp.Begin();
+                sp.Draw(defeatScreen, new Rectangle(Vector2.Zero.ToPoint(), new Point(
+                    GraphicsDevice.Viewport.Bounds.Width,
+GraphicsDevice.Viewport.Bounds.Height)), Color.White);
+                sp.End();
+            }
+            else
+            {
+                foreach (EnemyTank item in enemyList)
+                {
+
+                    item.Draw(gameTime);
+
+                }
+
+                startPosition.Draw(gameTime);
+                // TODO: Add your drawing code here
+                countDownTimer.Draw(gameTime);
+                base.Draw(gameTime);
             }
 
-            startPosition.Draw(gameTime);
-            // TODO: Add your drawing code here
-            countDownTimer.Draw(gameTime);
-            base.Draw(gameTime);
+            
         }
     }
 }

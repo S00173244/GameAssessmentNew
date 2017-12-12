@@ -158,7 +158,7 @@ namespace AnimatedSprite
            
             if (this.collisionDetect(player)&& hasHitTarget == false)
             {
-                player.Health -= 1;
+                player.Health -= 10;
                 ProjectileState = PROJECTILE_STATE.EXPOLODING;
                 this.Visible = false;
                     
